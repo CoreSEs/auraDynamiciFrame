@@ -1,0 +1,32 @@
+<aura:component
+    implements="forceCommunity:availableForAllPageTypes,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes, flexipage:availableForRecordHome"
+    access="global">
+    <!-- Attributes -->
+    <aura:attribute name="iframeUrl" type="String" />
+    <aura:attribute name="width" type="String" />
+    <aura:attribute name="height" type="String" />
+    <aura:attribute name="scrolling" type="String" />
+    <aura:attribute name="frameBorder" type="String" />
+    <aura:attribute name="style" type="String" />
+    <aura:attribute name="crossOrigin" type="String" />
+    <aura:attribute name="parameter" type="String" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="passThroughValue" type="String" />
+
+
+    <!-- Lightning Data Service (LDS) Attributes -->
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="recordError" type="String" />
+
+
+    <!-- Lightning Data Service (LDS) avoid an Apex controller -->
+    <force:recordData aura:id="recordLoader" recordId="{!v.recordId}" targetRecord="{!v.record}"
+        targetFields="{!v.simpleRecord}" targetError="{!v.recordError}" recordUpdated="{!c.doInit}" layoutType="FULL" />
+
+
+    <!-- iFrame -->
+    <iframe src="{!v.iframeUrl + v.passThroughValue}" width="{!v.width}" height="{!v.height}" style="{!v.style}"
+        frameBorder="{!v.frameBorder}" sandbox="{!v.crossOrigin}" scrolling="{!v.scrolling}" />
+
+</aura:component>
