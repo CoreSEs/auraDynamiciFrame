@@ -7,7 +7,7 @@ The component also lets them add the url, design attributes as well as a custom 
 
 ## Deploy this to your Org
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=CoreSEs&repo=dynamicAuraiFrameComponent">
+<a href="https://githubsfdeploy.herokuapp.com?owner=CoreSEs&repo=auraDynamiciFrame">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
